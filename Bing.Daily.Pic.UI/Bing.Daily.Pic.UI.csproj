@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{70CD6D53-384E-4B79-BC6B-17B80607F428}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Bing.Daily.Pic.UI</RootNamespace>
+    <AssemblyName>Bing.Daily.Pic.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BingDailyEventArgs\BingPicInfoEventArgs.cs" />
+    <Compile Include="BingDailyEventArgs\DownloadPictureEventArgs.cs" />
+    <Compile Include="BingDailyEventArgs\SavePictureEventArgs.cs" />
+    <Compile Include="Interfaces\IBingDailyPage.cs" />
+    <Compile Include="Interfaces\IBingDailyPictureChangedManager.cs" />
+    <Compile Include="Interfaces\IBingDailyPictureView.cs" />
+    <Compile Include="Interfaces\IDownloadPictureView.cs" />
+    <Compile Include="Interfaces\IPicInfoView.cs" />
+    <Compile Include="Interfaces\ISavePictureView.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presenters\BingDownloadPicturePresenter.cs" />
+    <Compile Include="Presenters\BingPicInfoPresenter.cs" />
+    <Compile Include="Presenters\DownloadPicturePresenterBase.cs" />
+    <Compile Include="Presenters\PicInfoPresenterBase.cs" />
+    <Compile Include="Presenters\SavePicturePresenter.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\Containers\BingDailyPictureWithGenericsBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Containers\BingDailyWithSmallPictureContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Containers\BingDailyWithSmallPictureVerticalContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Pages\BingDailyWithBigPictureContainerPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Pages\BingDailyWithDetailedPictureContainerPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Pages\BingDailyWithSmallPictureContainerPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Pages\BingDailyPageWithGenericsBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Pages\BingDailyWithSmallPictureVerticalContainerPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Views\BingDailyBigPictureView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Views\BingDailyBigPictureView.Designer.cs">
+      <DependentUpon>BingDailyBigPictureView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Containers\BingDailyWithBigPictureContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Containers\BingDailyWithBingDetailedPictureContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Pages\BingDailyPageBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Pages\BingDailyPageBase.Designer.cs">
+      <DependentUpon>BingDailyPageBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Containers\BingDailyPictureContainerBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Containers\BingDailyPictureContainerBase.Designer.cs">
+      <DependentUpon>BingDailyPictureContainerBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Views\BingDailyDetailedPictureView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Views\BingDailyDetailedPictureView.Designer.cs">
+      <DependentUpon>BingDailyDetailedPictureView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Views\BingDailyPictureViewBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Views\BingDailySmallPictureView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Views\BingDailySmallPictureView.Designer.cs">
+      <DependentUpon>BingDailySmallPictureView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UserControls\Views\BingDailyBigPictureView.resx">
+      <DependentUpon>BingDailyBigPictureView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Pages\BingDailyPageBase.resx">
+      <DependentUpon>BingDailyPageBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Containers\BingDailyPictureContainerBase.resx">
+      <DependentUpon>BingDailyPictureContainerBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Views\BingDailyDetailedPictureView.resx">
+      <DependentUpon>BingDailyDetailedPictureView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Views\BingDailyPictureViewBase.resx">
+      <DependentUpon>BingDailyPictureViewBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Views\BingDailySmallPictureView.resx">
+      <DependentUpon>BingDailySmallPictureView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bing.Daily.Pic.Common\Bing.Daily.Pic.Common.csproj">
+      <Project>{2618DF87-8796-4396-A9A3-78DEDFFC42A1}</Project>
+      <Name>Bing.Daily.Pic.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common.UserControls\CustomUserControls.csproj">
+      <Project>{F600CA7F-0E77-4CA3-BE3E-CF3A973E70EC}</Project>
+      <Name>CustomUserControls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
