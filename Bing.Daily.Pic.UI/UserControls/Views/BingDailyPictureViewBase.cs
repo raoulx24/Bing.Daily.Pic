@@ -152,7 +152,7 @@ namespace Bing.Daily.Pic.UI.UserControls.Views
 
         protected virtual void OnOpenFileRequested(object sender)
         {
-            Process.Start(DownloadedFileName);
+            Process.Start(new ProcessStartInfo(DownloadedFileName) { UseShellExecute = true });
         }
 
         protected virtual Image LoadImageFromFile(string fileName)

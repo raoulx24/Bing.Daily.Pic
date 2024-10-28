@@ -4,11 +4,11 @@ using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Bing.Daily.Pic.Common.Dtos;
 using Bing.Daily.Pic.UI.BingDailyEventArgs;
 using Bing.Daily.Pic.UI.Interfaces;
-using Newtonsoft.Json;
 
 namespace Bing.Daily.Pic.UI.Presenters
 {
@@ -52,7 +52,7 @@ namespace Bing.Daily.Pic.UI.Presenters
             if (string.IsNullOrEmpty(reqJson))
                 return;
 
-            BingReqContentDto bingDailyPicIfo = JsonConvert.DeserializeObject<BingReqContentDto>(reqJson);
+            BingReqContentDto bingDailyPicIfo = JsonSerializer.Deserialize<BingReqContentDto>(reqJson);
 
             bingDailyPicIfo.images.ForEach(x => { x.url = new Uri(_baseBingUri, string.Format("{0}{1}", x.urlbase, _uriSuffix)).AbsoluteUri; x.Country = e.Country; });
 
