@@ -61,5 +61,6 @@ namespace Bing.Daily.Pic.UI.Presenters
 
         private Uri _baseBingUri = new Uri("https://www.bing.com/");
         private string _uriSuffix = "_1920x1080.jpg";
+        //private string _uriSuffix = "_2560x1440.jpg"; 
     }
 }

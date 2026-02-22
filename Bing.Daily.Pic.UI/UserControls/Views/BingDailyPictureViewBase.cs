@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.ComponentModel;
 
 namespace Bing.Daily.Pic.UI.UserControls.Views
 {
@@ -35,6 +36,7 @@ namespace Bing.Daily.Pic.UI.UserControls.Views
             OnDownloadPictureRequested(this);
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public virtual DateTime PicDate
         {
             get
@@ -49,12 +51,14 @@ namespace Bing.Daily.Pic.UI.UserControls.Views
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public virtual Uri PicUri
         {
             get { return _picUri; }
             set { _picUri = value; }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public virtual string Caption
         {
             get { return _caption; }
@@ -76,12 +80,14 @@ namespace Bing.Daily.Pic.UI.UserControls.Views
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public virtual CountryDto FromCountry
         {
             get { return _country; }
             set { _country = value; }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public virtual string DownloadedFileName
         {
             get { return _downloadedFileName; }
@@ -92,24 +98,28 @@ namespace Bing.Daily.Pic.UI.UserControls.Views
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public virtual string OutImageFolder
         {
             get { return _outImageFolder; }
             set { _outImageFolder = value; }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public virtual ImagesStorageManager TempImagesStorageManager
         {
             get { return _tempImagesStorageManager; }
             set { _tempImagesStorageManager = value; }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public virtual bool FileSaved
         {
             get { return _fileSaved; }
             set { _fileSaved = value; }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public BingImageInfoDto ImageInfo { get; set; }
 
         public event EventHandler<DownloadPictureEventArgs> DownloadPictureRequested;

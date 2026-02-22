@@ -17,28 +17,36 @@ namespace CustomUserControls
             InitializeComponent();
         }
 
+        [Browsable(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public string TextBoxValue
         {
-            get { return textBox.Text; }
-            set { textBox.Text = value; }
+            get => textBox.Text;
+            set => textBox.Text = value;
         }
 
+        [Browsable(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public string Label
         {
-            get { return label.Text; }
-            set { label.Text = value; }
+            get => label.Text;
+            set => label.Text = value;
         }
 
+        [Browsable(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool ReadOnly
         {
-            get { return textBox.ReadOnly; }
-            set { textBox.ReadOnly = value; }
+            get => textBox.ReadOnly;
+            set => textBox.ReadOnly = value;
         }
 
+        [Browsable(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool MultiLine
         {
-            get { return textBox.Multiline; }
-            set { textBox.Multiline = value;  }
+            get => textBox.Multiline;
+            set => textBox.Multiline = value;
         }
     }
 }

@@ -47,6 +47,7 @@ namespace Bing.Daily.Pic.UI.UserControls.Pages
             bingDailyPictureContainer.SortByDate();
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public ICountrySettingsManager CountriesManger
         {
             get { return _countriesManger; }
@@ -56,6 +57,7 @@ namespace Bing.Daily.Pic.UI.UserControls.Pages
                 bingDailyPictureContainer.CountriesManger = value;
             }
         }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public ImagesStorageManager TempFilesStorageManager
         {
             get { return _tempFilesStorageManager; }
@@ -65,6 +67,7 @@ namespace Bing.Daily.Pic.UI.UserControls.Pages
                 bingDailyPictureContainer.TempFilesStorageManager = value;
             }
         }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string OutImageFolder
         {
             get { return _outImageFolder; }
@@ -74,6 +77,7 @@ namespace Bing.Daily.Pic.UI.UserControls.Pages
                 bingDailyPictureContainer.OutImageFolder = value;
             }
         }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public List<BingImageInfoDto> Images
         {
             get { return bingDailyPictureContainer.Images; }

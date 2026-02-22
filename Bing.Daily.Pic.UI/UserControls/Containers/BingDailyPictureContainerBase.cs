@@ -32,6 +32,7 @@ namespace Bing.Daily.Pic.UI.UserControls.Containers
             _bingPicInfoPresenter = new BingPicInfoPresenter(this);
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public List<BingImageInfoDto> NewImages
         {
             set
@@ -45,14 +46,18 @@ namespace Bing.Daily.Pic.UI.UserControls.Containers
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public List<BingImageInfoDto> Images
         {
             get { return _images; }
             set { _images = value; }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public ICountrySettingsManager CountriesManger { get => _countriesManger; set => _countriesManger = value; }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public ImagesStorageManager TempFilesStorageManager { get => _tempFilesStorageManager; set => _tempFilesStorageManager = value; }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string OutImageFolder { get => _outImageFolder; set => _outImageFolder = value; }
 
         public event EventHandler<BingPicInfoEventArgs> PicInfoRequested;
